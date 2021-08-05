@@ -9,13 +9,13 @@ import { Sucursal } from 'src/app/interface/sucursal';
 })
 export class SucursalComponent implements OnInit {
 
-  elementos = ['OPCION 1', 'OPCION 2', 'OPCION 3'];
+  listaSucursales: Sucursal[] = [];
   
   constructor(private sucursalService: SucursalService) { }
 
   ngOnInit(): void {
     this.sucursalService.obtenerSucursales().subscribe(sucursales => {
-        console.log(sucursales);
+        this.listaSucursales = sucursales;
       }
     );
   }

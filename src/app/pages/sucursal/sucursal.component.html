@@ -1,6 +1,8 @@
 <mat-form-field appearance="outline">
     <mat-label>Seleccione una opcion</mat-label>
     <mat-select name="food">
-        <mat-option *ngFor="let opcion of elementos">{{opcion}}</mat-option>
+        <mat-option *ngFor="let sucursal of listaSucursales" [value]="sucursal.codigoSucursal">
+            {{sucursal.nombre}}
+        </mat-option>
     </mat-select>
 </mat-form-field>

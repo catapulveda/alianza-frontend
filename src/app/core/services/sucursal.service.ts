@@ -8,10 +8,10 @@ import { Sucursal } from 'src/app/interface/sucursal';
 })
 export class SucursalService {
 
-  constructor(private htppClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   obtenerSucursales(): Observable<Sucursal[]> {
-    return this.htppClient.get<Sucursal[]>('http://localhost:1234/sucursales');
+    return this.httpClient.get<Sucursal[]>('http://localhost:1234/sucursales');
   }
 
 }
