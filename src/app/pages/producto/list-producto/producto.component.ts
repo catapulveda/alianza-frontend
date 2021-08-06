@@ -6,7 +6,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
   templateUrl: './producto.component.html',
   styleUrls: ['./producto.component.scss']
 })
-export class ProductoComponent implements OnInit {
+export class ListProductoComponent implements OnInit {
 
   miLista = [
     {

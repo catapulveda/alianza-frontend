@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CrearSucursalComponent } from './crear-sucursal.component';
+import { ConfirmDeleteComponent } from './confirm-delete.component';
 
-describe('CrearSucursalComponent', () => {
-  let component: CrearSucursalComponent;
-  let fixture: ComponentFixture<CrearSucursalComponent>;
+describe('ConfirmDeleteComponent', () => {
+  let component: ConfirmDeleteComponent;
+  let fixture: ComponentFixture<ConfirmDeleteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CrearSucursalComponent ]
+      declarations: [ ConfirmDeleteComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CrearSucursalComponent);
+    fixture = TestBed.createComponent(ConfirmDeleteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
