@@ -25,7 +25,7 @@ import { EditSucursalComponent } from './pages/sucursal/edit/edit-sucursal.compo
 import { CreateSucursalComponent } from './pages/sucursal/create/crear-sucursal.component';
 import { CreateProductoComponent } from './pages/producto/create-producto/create-producto.component';
 import { EditProductoComponent } from './pages/producto/edit-producto/edit-producto.component';
-import { ListProductoComponent } from './pages/producto/list-producto/producto.component';
+import { ListProductoComponent } from './pages/producto/list-producto/list-producto.component';
 import { ConfirmDeleteComponent } from './shared/confirm-delete/confirm-delete.component';
 
 
