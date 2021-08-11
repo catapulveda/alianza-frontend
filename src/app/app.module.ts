@@ -19,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { EditSucursalComponent } from './pages/sucursal/edit/edit-sucursal.component';
 import { CreateSucursalComponent } from './pages/sucursal/create/crear-sucursal.component';
@@ -27,6 +27,7 @@ import { CreateProductoComponent } from './pages/producto/create-producto/create
 import { EditProductoComponent } from './pages/producto/edit-producto/edit-producto.component';
 import { ListProductoComponent } from './pages/producto/list-producto/list-producto.component';
 import { ConfirmDeleteComponent } from './shared/confirm-delete/confirm-delete.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -58,7 +59,9 @@ import { ConfirmDeleteComponent } from './shared/confirm-delete/confirm-delete.c
         MatInputModule,
         MatDialogModule,
         FormsModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        FlexLayoutModule,
+        ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

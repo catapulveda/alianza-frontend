@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ProductoService } from 'src/app/core/services/producto.service';
 import { Producto } from 'src/app/interface/producto';
+import { CreateProductoComponent } from 'src/app/pages/producto/create-producto/create-producto.component';
 
 
 @Component({
@@ -15,7 +17,8 @@ export class ListProductoComponent {
   dataSource = new MatTableDataSource(null);
 
   constructor(
-    private productoService: ProductoService
+    private productoService: ProductoService,
+    public matDialog: MatDialog
   ) {
     this.listarProductos();
   }
@@ -28,6 +31,12 @@ export class ListProductoComponent {
   listarProductos() {
     this.productoService.listarProductos().subscribe(productos => {
       this.dataSource = new MatTableDataSource(productos);
+    });
+  }
+
+  addProduct() {
+    this.matDialog.open(CreateProductoComponent, {
+      width: '480px'
     });
   }
 
