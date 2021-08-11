@@ -25,7 +25,9 @@ export class CreateProductoComponent {
       return;
     }
 
-    alert('GUARDANDO PRODUCTO');
+    const value = this.miFormulario.value;
+
+    alert(JSON.stringify(value));
   }
 
 }

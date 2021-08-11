@@ -8,9 +8,6 @@
     <button type="button" class="btn btn-primary mt-2">Guardar</button>
 </div> -->
 
-<pre>
-    {{miFormulario.controls.nombreProducto.errors | json}}
-</pre>
 <form (ngSubmit)="saveProduct()" [formGroup]="miFormulario">
     <h1>Registrar un Producto</h1>
 
@@ -22,25 +19,31 @@
             <mat-error *ngIf="miFormulario.controls.nombreProducto.hasError('required')">
                 Este campo es requerido
             </mat-error>
-            <mat-error *ngIf="miFormulario.controls.nombreProducto.hasError('minLength')">
-                Minimo 5 caracteres
+            <mat-error *ngIf="miFormulario.controls.nombreProducto.hasError('minlength')">
+                M&iacute;nimo 5 caracteres
             </mat-error>
-            <mat-error *ngIf="miFormulario.controls.nombreProducto.hasError('maxLength')">
-                Minimo 7 caracteres
+            <mat-error *ngIf="miFormulario.controls.nombreProducto.hasError('maxlength')">
+                M&aacute;ximo 7 caracteres
             </mat-error>
         </mat-form-field>
 
         <mat-form-field fxFlex>
             <mat-label>Precio:</mat-label>
             <input type="number" min="0" max="10000" matInput formControlName="precioProducto">
-            <mat-error>
-                Ocurrio un error
+            <mat-error *ngIf="miFormulario.controls.precioProducto.hasError('required')">
+                Este campo es requerido
+            </mat-error>
+            <mat-error *ngIf="miFormulario.controls.precioProducto.hasError('min')">
+                M&iacute;nimo un valor de 10
+            </mat-error>
+            <mat-error *ngIf="miFormulario.controls.precioProducto.hasError('max')">
+                M&aacute;ximo un valor de 50
             </mat-error>
         </mat-form-field>
 
     </div>
 
     <div fxLayout="row" fxLayoutAlign="end center">
-        <button type="submit" mat-raised-button color="primary">Guardar</button>
+        <button [disabled]="miFormulario.invalid" type="submit" mat-raised-button color="primary">Guardar</button>
     </div>
 </form>
