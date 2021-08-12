@@ -1,0 +1,43 @@
+<form [formGroup]="miFormulario">
+
+    <div fxLayout="column">
+        <mat-form-field fxFlex appearance="outline">
+            <mat-label>Nombre:</mat-label>
+            <input type="text" matInput formControlName="firstName">
+        </mat-form-field>
+
+        <mat-form-field fxFlex appearance="outline">
+            <mat-label>Apellido:</mat-label>
+            <input type="text" matInput formControlName="lastName">
+        </mat-form-field>
+
+        <mat-form-field fxFlex appearance="fill">
+            <mat-label>Username:</mat-label>
+            <input type="text" matInput formControlName="username">
+        </mat-form-field>
+
+        <mat-form-field fxFlex>
+            <mat-label>Contraseña:</mat-label>
+            <input type="password" matInput formControlName="clave">
+        </mat-form-field>
+
+        <!-- <mat-form-field appearance="outline">
+            <mat-label>Choose an option</mat-label>
+            <mat-select formControlName="sucursal">
+                <mat-option *ngFor="let sucursal of misSucursales " value="sucursal.codigoSucursal ">
+                    {{sucursal.nombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field> -->
+
+        <mat-form-field appearance="outline">
+            <mat-label>Choose an option</mat-label>
+            <mat-select formControlName="sucursal">
+                <mat-option *ngFor="let sucursal of misSucursales$ | async" value="sucursal.codigoSucursal ">
+                    {{sucursal.nombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+</form>

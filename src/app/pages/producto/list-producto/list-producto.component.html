@@ -9,10 +9,10 @@
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- CODIGO -->
-    <ng-0 matColumnDef="codigoProducto">
+    <ng-container matColumnDef="codigoProducto">
         <th mat-header-cell *matHeaderCellDef>CODIGO</th>
         <td mat-cell *matCellDef="let element">{{ element.codigoProducto }}</td>
-    </ng-0>
+    </ng-container>
 
     <!-- NOMBRE -->
     <ng-container matColumnDef="nombreProducto">

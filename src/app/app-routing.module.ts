@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { UsuarioComponent } from 'src/app/pages/usuario/usuario.component';
 import { ListarSucursalComponent } from 'src/app/pages/sucursal/list/listar-sucursal.component';
 import { ListProductoComponent } from 'src/app/pages/producto/list-producto/list-producto.component';
+import { ListUsuarioComponent } from 'src/app/pages/usuario/list-usuario/list-usuario.component';
 
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'usuarios',
-    component: UsuarioComponent
+    component: ListUsuarioComponent
   },
   {
     path: 'sucursales',

@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UsuarioComponent } from 'src/app/pages/usuario/usuario.component';
 import { ListarSucursalComponent } from 'src/app/pages/sucursal/list/listar-sucursal.component';
 
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -28,12 +27,14 @@ import { EditProductoComponent } from './pages/producto/edit-producto/edit-produ
 import { ListProductoComponent } from './pages/producto/list-producto/list-producto.component';
 import { ConfirmDeleteComponent } from './shared/confirm-delete/confirm-delete.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CreateUsuarioComponent } from './pages/usuario/create-usuario/create-usuario.component';
+import { EditUsuarioComponent } from './pages/usuario/edit-usuario/edit-usuario.component';
+import { ListUsuarioComponent } from './pages/usuario/list-usuario/list-usuario.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsuarioComponent,
     ListarSucursalComponent,
     ListProductoComponent,
     CreateSucursalComponent,
@@ -41,6 +42,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CreateProductoComponent,
     EditProductoComponent,
     ConfirmDeleteComponent,
+    CreateUsuarioComponent,
+    EditUsuarioComponent,
+    ListUsuarioComponent
   ],
     imports: [
         BrowserModule,
