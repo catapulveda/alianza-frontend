@@ -29,14 +29,14 @@
 
         <mat-form-field fxFlex>
             <mat-label>Precio:</mat-label>
-            <input type="number" min="0" max="10000" matInput formControlName="precioProducto">
-            <mat-error *ngIf="miFormulario.controls.precioProducto.hasError('required')">
+            <input type="number" min="0" max="10000" matInput formControlName="precio">
+            <mat-error *ngIf="miFormulario.controls.precio.hasError('required')">
                 Este campo es requerido
             </mat-error>
-            <mat-error *ngIf="miFormulario.controls.precioProducto.hasError('min')">
+            <mat-error *ngIf="miFormulario.controls.precio.hasError('min')">
                 M&iacute;nimo un valor de 10
             </mat-error>
-            <mat-error *ngIf="miFormulario.controls.precioProducto.hasError('max')">
+            <mat-error *ngIf="miFormulario.controls.precio.hasError('max')">
                 M&aacute;ximo un valor de 50
             </mat-error>
         </mat-form-field>

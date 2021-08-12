@@ -37,6 +37,10 @@ export class ListProductoComponent {
   addProduct() {
     this.matDialog.open(CreateProductoComponent, {
       width: '480px'
+    }).afterClosed().subscribe(value => {
+      if(value === true) {
+        this.listarProductos();
+      }
     });
   }
 

@@ -20,4 +20,8 @@ export class ProductoService {
     return this.httpClient.get<Producto[]>(`${this.endPoint}/listar-productos`);
   }
 
+  insert(producto: Producto): Observable<Producto> {
+    return this.httpClient.post<Producto>(this.endPoint, producto);
+  }
+
 }
