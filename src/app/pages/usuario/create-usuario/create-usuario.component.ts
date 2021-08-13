@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Sucursal } from 'src/app/interface/sucursal';
 import { SucursalService } from '../../../core/services/sucursal.service';
 import { Observable } from 'rxjs';
+import { Usuario } from 'src/app/interface/usuario';
+import { UsuarioService } from 'src/app/core/services/usuario.service';
+import { MatDialogRef } from '@angular/material/dialog';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-create-usuario',
@@ -15,26 +19,51 @@ export class CreateUsuarioComponent {
 
   misSucursales: Sucursal[] = [];
 
-  misSucursales$: Observable<Sucursal[]> 
+  misSucursales$: Observable<Sucursal[]>
+  
+  msgError: string = null;
+
+  isExistUsername = false;
 
   constructor(
     private fb: FormBuilder,
-    private sucursalService: SucursalService
+    private sucursalService: SucursalService,
+    private usuarioService: UsuarioService,
+    public dialogRef: MatDialogRef<CreateUsuarioComponent>
   ) {
 
     this.miFormulario = this.fb.group({
-      firstName: [],
-      lastName: [],
-      username: [],
-      clave: [],
-      sucursal: []
+      firstName: [null, [Validators.required]],
+      lastName: [null, [Validators.required]],
+      username: [null, [Validators.required]],
+      clave: [null, [Validators.required]],
+      sucursal: [null, [Validators.required]]
     });
 
-    this.sucursalService.obtenerSucursales().subscribe(sucursales => {
-      this.misSucursales = sucursales;
-    });
+    // this.sucursalService.obtenerSucursales().subscribe(sucursales => {
+    //   this.misSucursales = sucursales;
+    // });
 
     this.misSucursales$ = this.sucursalService.obtenerSucursales();
+   }
+
+   saveUser() {
+     const usuario: Usuario = this.miFormulario.value;
+
+     this.usuarioService.insert(usuario).subscribe(
+       usuario => {
+         this.dialogRef.close(true);
+       },
+       (error: HttpErrorResponse) => {
+         this.msgError = 'Ocurrio un error al insertar el usuario';
+       }
+     );
+   }
+
+   validateUsername(event) {
+     this.usuarioService.validateUsername(event.target.value).subscribe(value => {
+       this.isExistUsername = value;
+     });
    }
 
 }
