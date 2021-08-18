@@ -9,20 +9,16 @@ import { ListUsuarioComponent } from 'src/app/pages/usuario/list-usuario/list-us
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'usuarios',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
   },
   {
-    path: 'usuarios',
-    component: ListUsuarioComponent
+    path: 'dashboard',
+    loadChildren: () => import('src/app/pages/pages.module').then(m => m.PagesModule)
   },
   {
-    path: 'sucursales',
-    component: ListarSucursalComponent
-  },
-  {
-    path: 'productos',
-    component: ListProductoComponent
+    path: 'auth',
+    loadChildren: () => import('src/app/auth/auth.module').then(m => m.AuthModule)
   }
 ];
 

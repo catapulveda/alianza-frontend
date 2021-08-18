@@ -30,21 +30,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CreateUsuarioComponent } from './pages/usuario/create-usuario/create-usuario.component';
 import { EditUsuarioComponent } from './pages/usuario/edit-usuario/edit-usuario.component';
 import { ListUsuarioComponent } from './pages/usuario/list-usuario/list-usuario.component';
+import { LayoutComponent } from './layout/layout.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListarSucursalComponent,
-    ListProductoComponent,
-    CreateSucursalComponent,
-    EditSucursalComponent,
-    CreateProductoComponent,
-    EditProductoComponent,
     ConfirmDeleteComponent,
-    CreateUsuarioComponent,
-    EditUsuarioComponent,
-    ListUsuarioComponent
+    LayoutComponent,
   ],
     imports: [
         BrowserModule,
